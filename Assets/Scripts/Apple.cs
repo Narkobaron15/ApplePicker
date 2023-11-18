@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
-    public static float BottomY = -20f;
-    
+    private Camera _mainCamera;
+    private ApplePicker _applePicker;
+
+    private const float BottomY = -20f;
+
     // Start is called before the first frame update
     private void Start()
     {
-        
+        _mainCamera = Camera.main;
+        _applePicker = _mainCamera!.GetComponent<ApplePicker>();
     }
 
     // Update is called once per frame
@@ -19,6 +23,7 @@ public class Apple : MonoBehaviour
             Destroy(gameObject);
             
             // Decrease HP by 1 heart
+            _applePicker.AppleDestroyed();
         }
     }
 }
