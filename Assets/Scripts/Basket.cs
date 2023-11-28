@@ -12,6 +12,8 @@ public class Basket : MonoBehaviour
     
     [Header("Set dynamically")]
     public TextMeshProUGUI scoreGt;
+
+    private int PrevScore => Convert.ToInt32(scoreGt.text);
     
     // Start is called before the first frame update
     private void Start()
@@ -47,12 +49,15 @@ public class Basket : MonoBehaviour
         
         Destroy(collidedWith);
         AddScore();
+        
+        if (PrevScore > HighScore.Score) {
+            HighScore.Score = PrevScore;
+        }
     }
     
     private void AddScore()
     {
-        int prevScore = Convert.ToInt32(scoreGt.text),
-            newScore = prevScore + AppleScore + Random.Range(-20, 20);
+        int newScore = PrevScore + AppleScore + Random.Range(-20, 20);
         scoreGt.text = newScore.ToString();
     }
 }
