@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: speed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -3134716495179914043, guid: 8f7762f8d597f7448b192228137d1375, type: 3}
+      propertyPath: applePrefab
+      value: 
+      objectReference: {fileID: 6930279890566018556, guid: 86ad82f45da8e2341824acdfa0861d77, type: 3}
     - target: {fileID: 149218, guid: 8f7762f8d597f7448b192228137d1375, type: 3}
       propertyPath: m_Name
       value: NewAppleTree
